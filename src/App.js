@@ -1,23 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './comonents/Header/Header';
+import Simponents from './comonents/Simponent/Simponents';
+import Home from './comonents/Home/Home';
+import { useState } from 'react';
 
 function App() {
+  const [count, setCount] = useState(10);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h5>Hello Count: {count}</h5>
+      <Header count={count} setCount={setCount}></Header>
+      <Home count={count}></Home>
+      <Simponents></Simponents>
     </div>
   );
 }
